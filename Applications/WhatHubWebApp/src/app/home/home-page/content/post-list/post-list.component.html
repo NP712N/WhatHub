@@ -1,0 +1,16 @@
+<div class="post-list">
+  <ng-container *ngIf="loading">
+    <mat-spinner [diameter]="50" class="loading-post"></mat-spinner>
+  </ng-container>
+
+  <ng-container *ngIf="!loading">
+    <div *ngFor="let post of posts; let i = index" class="post">
+      <mat-card>
+        <div fxLayoutAlign="start start" fxLayout="row" class="paragraph-container">
+          <what-hub-post [post]="post"></what-hub-post>
+        </div>
+      </mat-card>
+    </div>
+
+  </ng-container>
+</div>

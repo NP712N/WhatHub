@@ -1,0 +1,16 @@
+.post-list {
+  display: inline-block;
+  
+  .loading-post::ng-deep circle {
+    stroke: #bebebe !important;
+  }
+
+  .paragraph-container {
+    width: 700px;
+    height: 400px;
+  }
+
+  .post {
+    padding-bottom: 20px;
+  }
+}

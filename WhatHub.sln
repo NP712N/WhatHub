@@ -11,15 +11,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portal", "Portal", "{75394FD9-7586-43B1-89C0-7BB00920272C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "0.Common", "Libraries\0.Common\0.Common.csproj", "{DE772CD6-36A5-40DF-A5DD-14F2DA1B4F09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "0.Common", "Libraries\0.Common\0.Common.csproj", "{DE772CD6-36A5-40DF-A5DD-14F2DA1B4F09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.Helper", "Libraries\1.Helper\1.Helper.csproj", "{D0590D47-176A-45FE-82EB-81BA6567F432}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1.Helper", "Libraries\1.Helper\1.Helper.csproj", "{D0590D47-176A-45FE-82EB-81BA6567F432}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal.API", "Services\Portal\Portal.API\Portal.API.csproj", "{38E3A5AB-8860-4B00-B246-0F017BA104DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portal.API", "Services\Portal\Portal.API\Portal.API.csproj", "{38E3A5AB-8860-4B00-B246-0F017BA104DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal.Domain", "Services\Portal\Portal.Domain\Portal.Domain.csproj", "{D70AAD9F-75E6-4F01-8383-E4FFA39FB808}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portal.Domain", "Services\Portal\Portal.Domain\Portal.Domain.csproj", "{D70AAD9F-75E6-4F01-8383-E4FFA39FB808}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal.Infrastructure", "Services\Portal\Portal.Infrastructure\Portal.Infrastructure.csproj", "{850ADD3E-94A0-4086-9BC0-9FC3F9BD2B55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portal.Infrastructure", "Services\Portal\Portal.Infrastructure\Portal.Infrastructure.csproj", "{850ADD3E-94A0-4086-9BC0-9FC3F9BD2B55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WhatHubWebApp", "WhatHubWebApp", "{447CDCC4-8F9F-4FD6-A9CE-FC1355354FA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +60,7 @@ Global
 		{38E3A5AB-8860-4B00-B246-0F017BA104DF} = {75394FD9-7586-43B1-89C0-7BB00920272C}
 		{D70AAD9F-75E6-4F01-8383-E4FFA39FB808} = {75394FD9-7586-43B1-89C0-7BB00920272C}
 		{850ADD3E-94A0-4086-9BC0-9FC3F9BD2B55} = {75394FD9-7586-43B1-89C0-7BB00920272C}
+		{447CDCC4-8F9F-4FD6-A9CE-FC1355354FA3} = {B18629E7-841F-4F5A-BBFB-574A1ADA85A6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B71A6E9C-7E17-48A6-9B95-72B195FDE2F1}

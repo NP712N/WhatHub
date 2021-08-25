@@ -1,0 +1,20 @@
+.module-header {
+  display: inline-flex;
+  background-color: #dde0e4;
+  width: 70px;
+  cursor: pointer; 
+  border-radius: 4px;
+  margin: 0 10px 0 10px  !important;
+  opacity: 1;
+
+  mat-icon {
+    width: 100%;
+    text-align: center;
+    color: #84d0c5;
+  }
+}
+
+.module-header:hover, .active {
+  background-color: #929292;
+  transition: 0.3s;
+}
