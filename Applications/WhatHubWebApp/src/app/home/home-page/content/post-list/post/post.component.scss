@@ -1,8 +1,7 @@
 .post {
   height: 500px;
-  margin-bottom: 10px;
-
   .paragraph-container {
+    height:100%;
     padding-top: 5px;
     position: relative;
     overflow-y: hidden;
@@ -14,21 +13,13 @@
     font-family: inherit;
     word-break: break-all;
 
-    .paragraph {
-      width: 100%;
+    .post-header {
     }
 
-    .dash {
-      padding-left: 3px;
-      padding-right: 3px;
-      width: 12px;
-      position: relative;
+    .post-content {
     }
 
-    .see-more {
-      height: 20px; 
-      width: 65px;
-      position: relative;
+    .post-footer {
     }
   }
 }

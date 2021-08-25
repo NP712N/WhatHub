@@ -8,9 +8,10 @@
   .paragraph-container {
     width: 700px;
     height: 400px;
+    display: block !important;
   }
 
   .post {
-    padding-bottom: 20px;
+    display: block;
   }
 }
