@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  #infrastructure containers
+  what-hub-db:
+    image: mcr.microsoft.com/mssql/server:2019-CU8-ubuntu-16.04
+    container_name: what-hub-db
+    environment:
+     - SA_PASSWORD=Pass@word
+     - ACCEPT_EULA=Y
+    ports:
+     - "5100:1433"
+    volumes:
+     - ./sqlvolume:/var/opt/mssql/data
+  #app containers

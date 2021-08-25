@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using _1.Helper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace Portal.API.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            var a = EnvironmentHelper.GetByKey("ComSpec");
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
