@@ -10,7 +10,7 @@ namespace Portal.Domain.Core
         public bool IsAnonymous { get; set; }
 
         //Data configuration DB
-        public int? CreatedBy{ get; set; }
+        public string CreatedBy { get; set; }
 
         public virtual User User { get; set; }
     }
