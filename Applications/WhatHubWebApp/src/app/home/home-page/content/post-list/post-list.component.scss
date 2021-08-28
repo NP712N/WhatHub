@@ -6,12 +6,17 @@
   }
 
   .paragraph-container {
-    width: 700px;
+    width: 800px;
+    height: 200px;
     display: block !important;
   }
 
   .post {
     display: block;
     padding-bottom: 20px;
+
+    mat-card {
+      padding: 0;
+    }
   }
 }
