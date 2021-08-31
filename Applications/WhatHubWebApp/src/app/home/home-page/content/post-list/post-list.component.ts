@@ -45,6 +45,37 @@ export class PostListComponent implements OnInit {
         postByUserId: 1,
         content: '1'
       } as Post,
+      {
+        id: 3,
+        title: '3',
+        createDate: new Date(),
+        image: '',
+        isAnonymous: false,
+        lastModify: new Date(),
+        postByUserId: 1,
+        content: '1'
+      } as Post,
+      {
+        id: 3,
+        title: '3',
+        createDate: new Date(),
+        image: '',
+        isAnonymous: false,
+        lastModify: new Date(),
+        postByUserId: 1,
+        content: '1'
+      } as Post
+      ,
+      {
+        id: 3,
+        title: '3',
+        createDate: new Date(),
+        image: '',
+        isAnonymous: false,
+        lastModify: new Date(),
+        postByUserId: 1,
+        content: '1'
+      } as Post
     ];
   }
 
