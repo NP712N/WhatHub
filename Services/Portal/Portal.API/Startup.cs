@@ -79,6 +79,8 @@ namespace Portal.API
 
             app.ConfigureBuildInExceptionHandler(loggerFactory);
 
+            app.UseStaticFiles();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

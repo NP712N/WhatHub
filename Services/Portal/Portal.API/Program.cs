@@ -25,11 +25,11 @@ namespace Portal.API
                     .ReadFrom.Configuration(configuration)
                     .CreateLogger();
 
-                Serilog.Debugging.SelfLog.Enable(msg =>
-                {
-                    Debug.Print(msg);
-                    Debugger.Break();
-                });
+                //Serilog.Debugging.SelfLog.Enable(msg =>
+                //{
+                //    Debug.Print(msg);
+                //    Debugger.Break();
+                //});
 
                 //Log.Logger = new LoggerConfiguration()
                 //    .WriteTo.File("Logs/log.txt", rollingInterval: RollingInterval.Day)
