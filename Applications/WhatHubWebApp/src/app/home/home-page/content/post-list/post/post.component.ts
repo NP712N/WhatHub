@@ -24,4 +24,7 @@ export class PostComponent implements OnInit {
         this.post.content = dataResponse.value;
       })
   }
+
+  goDetail() {
+  }
 }

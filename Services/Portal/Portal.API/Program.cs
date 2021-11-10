@@ -28,7 +28,6 @@ namespace Portal.API
                 Serilog.Debugging.SelfLog.Enable(msg =>
                 {
                     Debug.Print(msg);
-                    Debugger.Break();
                 });
 
                 //Log.Logger = new LoggerConfiguration()

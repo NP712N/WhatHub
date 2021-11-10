@@ -10,6 +10,9 @@ import { ContentComponent } from './home-page/content/content.component';
 import { ModuleHeaderComponent } from './home-page/header/module-header/module-header.component';
 import { PostListComponent } from './home-page/content/post-list/post-list.component';
 import { PostComponent } from './home-page/content/post-list/post/post.component';
+import { PostDetailComponent } from './home-page/content/post-list/post/post-detail/post-detail.component';
+import { AppRoutingModule } from '../app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +21,17 @@ import { PostComponent } from './home-page/content/post-list/post/post.component
     ContentComponent,
     ModuleHeaderComponent,
     PostListComponent,
-    PostComponent
+    PostComponent,
+    PostDetailComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
     MatCardModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppRoutingModule
   ],
 })
 export class HomeModule { }
