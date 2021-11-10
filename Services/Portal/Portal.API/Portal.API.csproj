@@ -27,4 +27,8 @@
     <ProjectReference Include="..\Portal.Infrastructure\Portal.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\Posts\" />
+  </ItemGroup>
+
 </Project>

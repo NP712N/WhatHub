@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Portal.Infrastructure.Repositories
 {
-    public interface IBaseRepository<T>
+    public interface IBaseRepository<T> where T : BaseEntity
     {
         IQueryable<T> FindAll(bool trackChanges);
 
@@ -29,7 +29,7 @@ namespace Portal.Infrastructure.Repositories
         void Delete(T entity);
     }
 
-    public class BaseRepository<T> : IBaseRepository<T> where T : class
+    public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
     {
         protected readonly ApplicationDbContext Context;
         protected readonly DbSet<T> DbSet;

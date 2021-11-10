@@ -14,75 +14,79 @@ namespace Portal.Infrastructure.EF
     {
         public static void SeedAsync(IApplicationBuilder applicationBuilder)
         {
-            using var serviceScope = applicationBuilder.ApplicationServices.CreateScope();
-            var context = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
-
-            #region Seed Super User
-
-            string[] roles = new string[] { "Administrator", "Manager", "Staff", "User" };
-            foreach (string role in roles)
+            try
             {
-                var roleStore = new RoleStore<IdentityRole>(context);
+                using var serviceScope = applicationBuilder.ApplicationServices.CreateScope();
+                var context = serviceScope.ServiceProvider.GetService<ApplicationDbContext>();
 
-                if (!context.Roles.Any(r => r.Name == role))
+                #region Seed Super User
+
+                string[] roles = new string[] { "Administrator", "Manager", "Staff", "User" };
+                foreach (string role in roles)
                 {
-                    var newRole = new IdentityRole
+                    var roleStore = new RoleStore<IdentityRole>(context);
+
+                    if (!context.Roles.Any(r => r.Name == role))
                     {
-                        Name = role,
-                        NormalizedName = role.ToUpper()
-                    };
-                    roleStore.CreateAsync(newRole).Wait();
+                        var newRole = new IdentityRole
+                        {
+                            Name = role,
+                            NormalizedName = role.ToUpper()
+                        };
+                        roleStore.CreateAsync(newRole).Wait();
+                    }
                 }
-            }
-            //context.SaveChangesAsync().Wait();
+                //context.SaveChangesAsync().Wait();
 
-            var user = new User
-            {
-                FirstName = "Super",
-                LastName = "Admin",
-                Email = "xxxx@example.com",
-                NormalizedEmail = "XXXX@EXAMPLE.COM",
-                UserName = "admin",
-                NormalizedUserName = "ADMIN",
-                PhoneNumber = "+111111111111",
-                EmailConfirmed = true,
-                PhoneNumberConfirmed = true,
-                SecurityStamp = Guid.NewGuid().ToString("D")
-            };
-
-            if (!context.Users.Any(u => u.UserName == user.UserName))
-            {
-                var password = new PasswordHasher<User>();
-                var hashed = password.HashPassword(user, "Abc#1234");
-                user.PasswordHash = hashed;
-
-                var userStore = new UserStore<User>(context);
-                var result = userStore.CreateAsync(user);
-            }
-
-            AssignRolesAsync(serviceScope.ServiceProvider, user.Email, roles).Wait();
-
-            #endregion Seed Super User
-
-            #region Seed Posts
-
-            var postDbSet = context.Set<Post>();
-            if (!postDbSet.Any())
-            {
-                for (int i = 0; i < 3; i++)
+                var user = new User
                 {
-                    postDbSet.Add(new Post
-                    {
-                        Title = $"Test {i}",
-                        Content = $"Test {i}",
-                        Image = "https://i.pinimg.com/236x/c5/3e/11/c53e110ac70e3555950057eb92334f66.jpg"
-                    });
+                    FirstName = "Super",
+                    LastName = "Admin",
+                    Email = "xxxx@example.com",
+                    NormalizedEmail = "XXXX@EXAMPLE.COM",
+                    UserName = "admin",
+                    NormalizedUserName = "ADMIN",
+                    PhoneNumber = "+111111111111",
+                    EmailConfirmed = true,
+                    PhoneNumberConfirmed = true,
+                    SecurityStamp = Guid.NewGuid().ToString("D")
+                };
+
+                if (!context.Users.Any(u => u.UserName == user.UserName))
+                {
+                    var password = new PasswordHasher<User>();
+                    var hashed = password.HashPassword(user, "Abc#1234");
+                    user.PasswordHash = hashed;
+
+                    var userStore = new UserStore<User>(context);
+                    var result = userStore.CreateAsync(user);
                 }
+
+                AssignRolesAsync(serviceScope.ServiceProvider, user.Email, roles).Wait();
+
+                #endregion Seed Super User
+
+                #region Seed Posts
+
+                var postDbSet = context.Set<Post>();
+                if (!postDbSet.Any())
+                {
+                    for (int i = 0; i < 3; i++)
+                    {
+                        postDbSet.Add(new Post
+                        {
+                            Title = $"Test {i}",
+                            Content = $"Test {i}",
+                            Image = "https://i.pinimg.com/236x/c5/3e/11/c53e110ac70e3555950057eb92334f66.jpg"
+                        });
+                    }
+                }
+
+                #endregion Seed Posts
+
+                context.SaveChangesAsync().Wait();
             }
-
-            #endregion Seed Posts
-
-            context.SaveChangesAsync().Wait();
+            catch (Exception ex) { }
         }
 
         private static async Task<IdentityResult> AssignRolesAsync(IServiceProvider serviceScope, string email, string[] roles)
